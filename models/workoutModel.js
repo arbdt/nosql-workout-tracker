@@ -1,3 +1,7 @@
+/*---------------*\
+|  Workout Model  |
+\*---------------*/
+
 // import Mongoose
 const mongoose = require("mongoose");
 const Exercises = require("./exerciseModel");

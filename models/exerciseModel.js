@@ -1,3 +1,7 @@
+/*----------------*\
+|  Exercise Model  |
+\*----------------*/
+
 // import Mongoose
 const mongoose = require("mongoose");
 
@@ -11,6 +15,10 @@ const ExerciseSchema = new Schema({
     },
     name: {
         type: String
+    },
+    distance: {
+        type: Number,
+        min: 0
     },
     duration: {
         type: Number,

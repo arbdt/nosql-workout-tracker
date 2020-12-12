@@ -15,10 +15,15 @@ app.use(express.json()); // JSON format
 app.use(require("./routes/router")); // router module
 
 // set up mongoose
-mongoose.connect("mongodb://localhost/workout", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/workout',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 // run server
 app.listen(PORT, function(){

@@ -12,7 +12,9 @@ const PORT = process.env.PORT || 3000; // PORT
 let app = express();
 app.use(express.urlencoded({extended: true})); // URL params
 app.use(express.json()); // JSON format
-app.use(require("./routes/router")); // router module
+app.use(require("./routes/api-routes")); // router module for APIs
+app.use(require("./routes/html-routes")); // router module for pages
+app.use(express.static("public")); // static files
 
 // set up mongoose
 mongoose.connect(

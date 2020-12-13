@@ -46,17 +46,15 @@ router.post(`/api/workouts`, function (request, response){
 // get workouts in range
 // GET `/api/workouts/range`
 router.get(`/api/workouts/range`, function (request, response){
-
+    Workout.find({}).then(function (result){
+        response.json(result);
+    })
 });
 
 // home page
 router.get("/", function (request, response){
     response.sendFile(path.join(__dirname, "../public/index.html"));
 });
-
-// stats.js ----
-// fetch stats
-// `/api/workouts/range`
 
 // make routes available as module
 module.exports = router;

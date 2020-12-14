@@ -3,7 +3,6 @@
 \*--------*/
 
 // import modules
-const { json } = require("express");
 let express = require("express");
 let mongoose = require("mongoose");
 

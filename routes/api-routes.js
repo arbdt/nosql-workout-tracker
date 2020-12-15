@@ -11,7 +11,7 @@ const Workout = require("../models/workoutModel");
 // GET `/api/workouts`
 router.get(`/api/workouts`, function (request, response){
     // find workouts
-    Workout.find({}).sort({ createdAt: -1}).limit(1).then(function(result){
+    Workout.find({}).sort({ day: -1}).limit(1).then(function(result){
         // send workouts
         response.json(result);
     });
